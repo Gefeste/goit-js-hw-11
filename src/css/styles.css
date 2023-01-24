@@ -25,19 +25,62 @@ header {
   /* margin-top: auto;
   margin-left: auto;
   margin-right: auto; */
-  width: 200;
+  width: 350;
 }
 
 input {
-  width: 200px;
-  height: 35px;
+  padding-left: 15px;
+  width: 350px;
+  height: 45px;
+  font-size: large;
 }
 
 button {
   position: absolute;
   bottom: 0;
   right: 0;
-  height: 35px;
-  width: 35px;
+  height: 45px;
+  width: 45px;
   display: inline-block;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 55px;
+  width: 1800px;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  overflow: hidden;
+}
+
+.photo-card {
+  /* float: left; */
+}
+
+.container {
+  width: 1200px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.photo-card img {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.info {
+
+  border: 1px solid #eeeeee;
+  border-top: none;
+  /* /* padding-top: 20px; */
+  padding-right: 24px;
+  /* padding-bottom: 20px; */
+  padding-left: 24px; 
 }
