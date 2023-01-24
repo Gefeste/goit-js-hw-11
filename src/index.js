@@ -1,13 +1,11 @@
 import { onSearch } from "./fetchCountries.js";
-import Notiflix from 'notiflix';
+// import Notiflix from 'notiflix';
 
 
 const list = document.querySelector('.gallery');
 const input = document.querySelector('[name="searchQuery"]');
 const submitBtn = document.querySelector('.js-form-btn');
 submitBtn.addEventListener('click', onLoad);
-
-
 
 
 function onLoad(eve) {
