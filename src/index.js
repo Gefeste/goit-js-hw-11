@@ -19,6 +19,7 @@ const query = input.value
 
 
 
+
 function createMarkup(obj) {
     console.log(obj.hits)
     const oblect = obj.hits;
