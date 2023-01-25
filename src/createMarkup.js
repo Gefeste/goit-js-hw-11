@@ -1,10 +1,18 @@
 
-function createMarkup(obj) {
-  // console.log(obj)
-  if (obj.hits.length === 0) {
-    Notiflix.Notify.failure("Sorry, there are no images matching your search query. Please try again.");
-  }
-  const oblect = obj.hits;
+import Notiflix from 'notiflix';
+import { hits } from "./index.js";
+import { loadMore } from "./index.js";
+
+function createMarkup(response) {
+  console.log("obja", response.data.totalHits)
+//   if (obj.data.totalHits === 0) {
+//     Notiflix.Notify.failure("Sorry, there are no images matching your search query. Please try again.");
+//     };
+    if (response.data.totalHits <= hits) {
+        loadMore.hidden = true;
+  Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
+    };
+  const oblect = response.data.hits;
   return oblect.map(({
     webformatURL,
     largeImageURL,
@@ -36,21 +44,6 @@ function createMarkup(obj) {
   ).join('');
 
 }
-// function onSearch(query) {
-//     const BASE_URL = 'https://pixabay.com/api/';
-//     const API_KEY = '33094767-bc88b030fc5c18ef153037b77';
-//     let page = 1;
-//     return fetch(`${BASE_URL}?key=${API_KEY}&q=${query}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=40`)
-//         .then(resp => {
-//             if (!resp.ok) {
-//                 throw new Error(resp.statusText)
-//             }
-
-//             return resp.json()
-//         })
-// }
-
-
 
 
 export { createMarkup };
