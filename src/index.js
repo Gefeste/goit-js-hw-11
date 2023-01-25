@@ -111,3 +111,5 @@ async function onClick(response) {
 //         })
 // }
 
+export { hits };
+export { loadMore };
