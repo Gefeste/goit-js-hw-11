@@ -68,7 +68,7 @@ input {
 }
 
 .photo-card img {
-  width: 370px; 
+  width: 340px; 
   height: 300px;
   object-fit: cover;
 }
