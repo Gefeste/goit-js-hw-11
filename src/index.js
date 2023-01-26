@@ -18,6 +18,9 @@ function onLoad() {
   loadMore.hidden = true;
   const query = input.value;
   list.innerHTML = "";
+  if (query === "") {
+    return Notiflix.Notify.failure("Sorry, there are no images matching your search query. Please try again.");
+    };
   onSearch(query);
 };
 
@@ -27,6 +30,8 @@ async function onSearch(query, page = 1) {
     const BASE_URL = 'https://pixabay.com/api/';
     const response = await axios.get(`${BASE_URL}?key=${API_KEY}&q=${query}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=40`);
     
+
+
     if (response.data.totalHits === 0) {
       return Notiflix.Notify.failure("Sorry, there are no images matching your search query. Please try again.");
     };
